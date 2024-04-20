@@ -1,1 +1,1 @@
-I use `split()` and not regular expressions.
+I use `str.split()` and not regular expressions.

@@ -1,7 +1,8 @@
 import d05
 
 
-def map1(dsl, ijs):  # return (done, more) where `more` are subject to later rules
+def map1(dsl, ijs):
+    """Returns (done, more) where `more` are subject to later rules"""
     d, s, l = dsl
     done, more = [], []
     for i, j in ijs:

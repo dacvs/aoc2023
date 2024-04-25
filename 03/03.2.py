@@ -6,8 +6,7 @@ with open("input.txt") as f:
     ans = 0
     for g in range(I):
         for h in range(J):
-            if A[g, h] == '*':
-                print("GEAR", g, h)
+            if A[g, h] == '*':  # a gear at (g, h)
                 nbrs = []
                 for i in [g - 1, g, g + 1]:
                     if 0 <= i < I:

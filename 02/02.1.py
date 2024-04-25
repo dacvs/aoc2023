@@ -3,10 +3,10 @@ with open("input.txt") as f:
     ans = 0
     for s in f:
         possible = True
-        title, games = s.strip().split(':')
+        title, games = s.split(':')
         _, game_id = title.split()
         for game in games.split(';'):
-            for cube in game.split(',')
+            for cube in game.split(','):
                 count, color = cube.split()
                 if load[color] < int(count):
                     possible = False

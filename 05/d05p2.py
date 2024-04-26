@@ -1,9 +1,5 @@
-import d05
-
-
-def map1(dsl, ijs):
+def map1(d, s, l, ijs):
     """Returns (done, more) where `more` are subject to later rules"""
-    d, s, l = dsl
     done, more = [], []
     for i, j in ijs:
         # interval [i, j) is cut at 2 points, s and s + l
@@ -26,12 +22,13 @@ def map1(dsl, ijs):
 
 def map_all(dsls, ijs):
     out = []
-    for dsl in dsls:
-        done, ijs = map1(dsl, ijs)
+    for d, s, l in dsls:
+        done, ijs = map1(d, s, l, ijs)
         out += done
     return out + ijs
 
 
+import d05
 S, M = d05.seeds_maps("input.txt")
 seeds = [(S[2 * i], S[2 * i] + S[2 * i + 1]) for i in range(len(S) // 2)]
 soils           = map_all(M[0], seeds)

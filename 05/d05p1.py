@@ -1,6 +1,3 @@
-import d05
-
-
 def dmap(dsls, n):
     for d, s, l in dsls:
         if s <= n < s + l:
@@ -8,6 +5,7 @@ def dmap(dsls, n):
     return n
 
 
+import d05
 seeds, M = d05.seeds_maps("input.txt")
 ans = -1
 for seed in seeds:

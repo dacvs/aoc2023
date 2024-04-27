@@ -1,8 +1,8 @@
 import numpy as np
 
 
-def d11(expansion_factor):
-    with open("input.txt") as f:
+def d11(filename, expansion_factor):
+    with open(filename) as f:
         A = np.array([list(s.strip()) for s in f])
         I, J = A.shape
         empty_cols = np.all(A == '.', axis=0).astype(int)

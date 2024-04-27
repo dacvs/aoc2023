@@ -1,2 +1,2 @@
 import d11
-d11.d11(expansion_factor=10**6)
+d11.d11("input.txt", expansion_factor=10**6)

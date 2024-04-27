@@ -12,7 +12,7 @@ def mhtype(M, order, cards):  # memoized
 
 with open("input.txt") as f:
     order = "J23456789TQKA"
-    M = {}  # key is hand, like "32TJK". val is highest value achieved by resolving wildcards
+    M = {}  # Key is hand, like "32TJK". Val is highest value achieved by resolving wildcards.
     hands = []
     for s in f:
         cards, bid = s.split()

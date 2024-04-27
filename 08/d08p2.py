@@ -9,9 +9,6 @@ def length(F, k):
 import numpy as np
 import d08
 T, F = d08.turns_forks("input.txt")
-i = 0
 ks = [k for k in F if k[-1] == 'A']
-ns = []
-for k in ks:
-    ns.append(length(F, k))
+ns = [length(F, k) for k in ks]
 print("ans", np.lcm.reduce(ns))

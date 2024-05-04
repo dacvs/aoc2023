@@ -11,6 +11,6 @@ We may evaluate N(W, G) recursively by counting:
     2. all the other arrangements.
 
 Memoization allows us to evaluate N efficiently.
-I did a simple version with memoization.
+My simple implementation uses memoization.
 
 Dynamic programming is also possible.

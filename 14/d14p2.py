@@ -5,9 +5,9 @@ def tilt_north(A):
     I, J = A.shape
     for j in range(J):
         i0 = 0                          # interval [i0, i1) free of rocks
-        while i0 < I and A[i0, j] == '#':
-            i0 += 1
         while i0 < I:
+            while i0 < I and A[i0, j] == '#':
+                i0 += 1
             i1 = i0
             n = 0
             while i1 < I and A[i1, j] != '#':
@@ -17,8 +17,6 @@ def tilt_north(A):
                 i1 += 1
             A[i0 : i0 + n, j] = 'O'     # place n rocks
             i0 = i1
-            while i0 < I and A[i0, j] == '#':
-                i0 += 1
     return A
 
 

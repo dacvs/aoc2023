@@ -30,7 +30,7 @@ def chop(ineq, box):
 
 
 with open("input.txt") as f:
-    D = {}
+    D = {}  # name: rules
     for s in f:
         if s.strip():  # s is like "{x=787,m=2655,a=1222,s=2876}\n"
             name, right = s.split('{')

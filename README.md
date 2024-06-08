@@ -1,9 +1,10 @@
 # Advent of Code 2023
-Solutions by David Smith
-dsmith@alumni.caltech.edu
+## Solutions by David Smith
+## dsmith@alumni.caltech.edu
 
-I competed with 17 other participants on a private leaderboard of
-Advent of Code 2023. I entered the contest a couple weeks late,
+I participated in Advent of Code 2023,
+competing with 17 other participants on a private leaderboard.
+I entered the contest a couple weeks late,
 and I missed out on the opportunity to gain some early points.
 
 On March 31, 2024, I was first on our leaderboard to solve all 50
@@ -12,11 +13,10 @@ place in points when I finished.
 
 Here are my solutions, cleaned up, straightened out, and edited for
 consistency. I used **Python** only.
-
 Occasionally I experimented with other tools, including SymPy and
 Sage Mathematics, before I switched back to Python.
 
-It turns out that the only library I really needed was NumPy.
+The only library I really needed was NumPy.
 In places where I used other libraries (`import sys`, `import math`,
 `import random`), I have edited my solutions to use **NumPy only**.
 
@@ -26,7 +26,6 @@ This was my first time participating in Advent of Code. Problems were
 easy at first. I solved many of them that first Saturday.
 I solved many problems before I ever received a "wrong answer" message.
 I solved many problems before I ever defined a function.
-
 I defined only one class, and I could easily do without that definition.
 I edited my solutions to use **no classes**.
 

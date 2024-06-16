@@ -7,7 +7,7 @@ Let N(W, G) be the number of possible arrangements within W of springs
 whose group sizes are in G.
 
 We may evaluate N(W, G) recursively by counting:
-    1, those arrangements where the last group of G is at the end of W, plus
+    1. those arrangements where the last group of G is at the end of W, plus
     2. all the other arrangements.
 
 Memoization allows us to evaluate N efficiently.

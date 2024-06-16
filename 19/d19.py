@@ -1,4 +1,4 @@
-def d19(filename):
+def workflows_ratings(filename):
     D = {}  # name: rules
     X = []  # each entry is a 4-tuple `xmas`
     with open(filename) as f:

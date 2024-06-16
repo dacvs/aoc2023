@@ -18,7 +18,7 @@ def result(D, name, xmas):  # xmas is a tuple of ratings in categories x, m, a, 
             return result(D, rule, xmas)
 
 
-D, X = d19.d19("input.txt")
+D, X = d19.workflows_ratings("input.txt")
 ans = 0
 for xmas in X:
     if result(D, "in", xmas) == "A":

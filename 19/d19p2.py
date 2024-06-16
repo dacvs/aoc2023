@@ -31,7 +31,7 @@ def chop(ineq, box):
     return boxT, boxF
 
 
-D, _ = d19.d19("input.txt")
+D, _ = d19.workflows_ratings("input.txt")
 box = np.array(((0, 4000), (0, 4000), (0, 4000), (0, 4000)))  # (c, d], order "xmas"
 box_name_ks = [(box, "in", 0)]  # k: index into name's rules
 ans = 0

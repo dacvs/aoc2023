@@ -1,7 +1,5 @@
 def seeds_maps(filename):
     """
-    Read Day 5 input file
-
     Returns (seeds, maps) where:
         seeds is a list of integer seed values
         maps is a list D[0], ..., D[6], each a list of 3-tuple of int

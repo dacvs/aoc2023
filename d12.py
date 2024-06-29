@@ -1,14 +1,13 @@
-def words_lists(filename):
-    with open(filename) as f:
-        for line in f:
-            W, G = line.split()
-            G = tuple(int(s) for s in G.split(','))
-            yield W, G
+import lib
 
+def words_lists():
+    for s in lib.block("input/12.txt"):
+        W, G = s.split()
+        G = tuple(int(t) for t in G.split(','))
+        yield W, G
 
 def fits_at_end(W, k):  # can a spring group of length k>0 go at the end of W?
     return k <= len(W) and (not '.' in W[-k:]) and (k == len(W) or W[-k-1] != '#')
-
 
 def N(M, W, G):
     """The number N of arrangements in word W of spring groups whose sizes are in G"""

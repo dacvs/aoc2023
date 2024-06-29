@@ -44,8 +44,10 @@ TODO hyperlinks to selected problems
 If you want to run my scripts, you will need Python.
 I used Python 3.10, but any recent Python should work.
 You should find the problem statement and problem inputs at the
-Advent of Code web site. Record your problem input in a file named
+Advent of Code web site.
+Record your problem input in a file named
 "input.txt" so that my script can find it.
+TODO update input loc
 
 Congratulations to Eric Wastl on creating a nice set of problems
 for this competition. The visual presentation is impressive.

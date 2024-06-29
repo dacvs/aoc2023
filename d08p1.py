@@ -1,5 +1,5 @@
 import d08
-T, F = d08.turns_forks("input.txt")
+T, F = d08.turns_forks()
 k = "AAA"
 i = 0
 while k != "ZZZ":

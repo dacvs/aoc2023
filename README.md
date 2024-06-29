@@ -84,3 +84,10 @@ Memoization allows us to evaluate N efficiently.
 My simple implementation uses memoization.
 
 Dynamic programming is also possible.
+
+### Day 14
+
+In part 1, we may tally the load without moving any rocks around.
+
+In part 2, we have to move rocks around, as far as I can tell.
+We can do a northward tilt in linear time.

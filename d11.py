@@ -2,7 +2,7 @@ import lib
 import numpy as np
 
 def d11(expansion_factor):
-    A = np.array([list(s.strip()) for s in lib.block("input/11.txt")])
+    A = np.array([list(s) for s in lib.block("input/11.txt")])
     I, J = A.shape
     empty_cols = np.all(A == '.', axis=0).astype(int)
     empty_rows = np.all(A == '.', axis=1).astype(int)

@@ -1,6 +1,6 @@
 import lib
 import numpy as np
-A = np.array([list(s.strip()) for s in lib.block("input/14.txt")])
+A = np.array([list(s) for s in lib.block("input/14.txt")])
 I, J = A.shape
 ans = 0
 for j in range(J):  # tally each column independently

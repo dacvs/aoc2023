@@ -37,7 +37,7 @@ def northload(A):
 def to_string(A):
     return ''.join(A.reshape(-1))
 
-A = np.array([list(s.strip()) for s in lib.block("input/14.txt")])
+A = np.array([list(s) for s in lib.block("input/14.txt")])
 string_cycles = {to_string(A): 0} 
 nloads = [northload(A)]
 k = 0

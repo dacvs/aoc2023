@@ -49,3 +49,13 @@ Advent of Code web site. Record your problem input in a file named
 
 Congratulations to Eric Wastl on creating a nice set of problems
 for this competition. The visual presentation is impressive.
+
+## Comments
+
+### Day 2
+
+We don't need regular expressions. Python's `str.split()` is fine.
+
+### Day 3
+
+NumPy arrays. Why not?

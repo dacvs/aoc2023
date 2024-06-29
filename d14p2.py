@@ -1,5 +1,5 @@
-import lib
 import numpy as np
+import lib
 
 def tilt_north(A):
     I, J = A.shape

@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def num_energized(A, rays):
     I, J = A.shape
     di = {'E': 0, 'N': -1, 'W': 0, 'S': 1}

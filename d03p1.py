@@ -1,5 +1,5 @@
-import lib
 import numpy as np
+import lib
 D = "0123456789" 
 A = np.array([list(s) for s in lib.block("input/03.txt")])
 I, J = A.shape

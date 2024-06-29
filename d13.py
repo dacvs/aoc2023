@@ -1,5 +1,5 @@
-import lib
 import numpy as np
+import lib
 
 def summarize(P, num_mismatches):
     n = 0

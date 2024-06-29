@@ -1,5 +1,5 @@
-import lib
 import numpy as np
+import lib
 A = np.array([list(s) for s in lib.block("input/14.txt")])
 I, J = A.shape
 ans = 0

@@ -1,5 +1,5 @@
-import lib
 import numpy as np
+import lib
 
 def d11(expansion_factor):
     A = np.array([list(s) for s in lib.block("input/11.txt")])

@@ -59,3 +59,7 @@ We don't need regular expressions. Python's `str.split()` is fine.
 ### Day 3
 
 NumPy arrays. Why not?
+
+### Day 4
+
+Keep it simple.

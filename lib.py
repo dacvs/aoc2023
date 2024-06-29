@@ -11,5 +11,4 @@ def split(line, seps):
     for sep in seps:
         pre, line = line.split(sep, maxsplit=1)
         out.append(pre)
-    out.append(line)
-    return out
+    return out + [line]

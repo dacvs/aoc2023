@@ -1,8 +1,6 @@
 import d22
-
-A, N, V = d22.d22("input/22.txt")
+A, N, V = d22.d22()
 bottom = set(u for u in V if not d22.supporters(A, N, u))
-
 ans = 0
 for i, u in enumerate(V):
     # remove u and then all unsupported bricks above

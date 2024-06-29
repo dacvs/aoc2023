@@ -1,12 +1,9 @@
 import d22
 
-
 def removable(A, N, u):
     return all(1 < len(d22.supporters(A, N, v)) for v in d22.supporteds(A, u))
 
-
-A, N, _ = d22.d22("input/22.txt")
-
+A, N, _ = d22.d22()
 ans = 0
 for w in range(len(A)):
     if removable(A, N, w):

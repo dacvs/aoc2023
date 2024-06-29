@@ -4,9 +4,8 @@ def dmap(dsls, n):
             return n + d - s
     return n
 
-
 import d05
-seeds, M = d05.seeds_maps("input.txt")
+seeds, M = d05.seeds_maps()
 ans = -1
 for seed in seeds:
     soil        = dmap(M[0], seed)

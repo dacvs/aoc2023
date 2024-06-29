@@ -19,7 +19,6 @@ def map1(d, s, l, ijs):
             more.append((L2, r2))
     return done, more
 
-
 def map_all(dsls, ijs):
     out = []
     for d, s, l in dsls:
@@ -27,9 +26,8 @@ def map_all(dsls, ijs):
         out += done
     return out + ijs
 
-
 import d05
-S, M = d05.seeds_maps("input.txt")
+S, M = d05.seeds_maps()
 seeds = [(S[2 * i], S[2 * i] + S[2 * i + 1]) for i in range(len(S) // 2)]
 soils           = map_all(M[0], seeds)
 fertilizers     = map_all(M[1], soils)

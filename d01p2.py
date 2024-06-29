@@ -6,12 +6,11 @@ def beg_end_val(s):
             if s[i : i + len(word)] == word:
                 yield i, i + len(word) - 1, k
 
+def value(s):
+    d = [(i, int(c)) for i, c in enumerate(s) if c in "0123456789"]
+    _, m = min(d + list((i, k) for i, _, k in beg_end_val(s)))
+    _, n = max(d + list((j, k) for _, j, k in beg_end_val(s))) 
+    return 10 * m + n
 
-with open("input.txt") as f:
-    ans = 0
-    for s in f:
-        d = [(i, int(c)) for i, c in enumerate(s.strip()) if c in "0123456789"]
-        _, m = min(d + list((i, k) for i, _, k in beg_end_val(s)))
-        _, n = max(d + list((j, k) for _, j, k in beg_end_val(s))) 
-        ans += 10 * m + n
-    print("ans", ans)
+import lib
+print("ans", sum(value(s) for s in lib.block("input/01.txt")))

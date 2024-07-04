@@ -8,22 +8,6 @@ def find(parent, x: int) -> int:  # as in the union-find data structure
         x = parent[x]
     return x
 
-def component(N, u0):
-    N = {u: list(N[u]) for u in N}  # make a copy
-    emitted = set()
-    stack = [u0]
-    while stack:
-        u = stack[-1]
-        while N[u] and N[u][-1] in emitted:
-            N[u].pop()
-        if N[u]:
-            v = N[u].pop()
-            stack.append(v)
-        else:
-            stack.pop()
-            emitted |= set([u])
-            yield u
-
 N = {}
 for line in lib.block("input/25.txt"):
     u, vs = line.split(':')
@@ -105,15 +89,15 @@ while True:
         # remove the cut
         for a in cut:
             u, v = a
-            N[u] = [w for w in N[u] if w != v]
-            N[v] = [w for w in N[v] if w != u] 
+            N[u] = set(w for w in N[u] if w != v)
+            N[v] = set(w for w in N[v] if w != u)
 
         for k in AK:
             i, j = E[k]
             x = find(parent, i)
             y = find(parent, j)
             if x != y:
-                c = len(list(set(component(N, V[i]))))
-                d = len(list(set(component(N, V[j]))))
+                c = len(lib.dfs(N, V[i]))  # size of component of V[i]
+                d = len(lib.dfs(N, V[j]))  # size of component of V[j]
                 print(k, i, j, V[i], V[j], c, d, "ans", c * d)
         break

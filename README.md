@@ -3,12 +3,12 @@
 ## dsmith@alumni.caltech.edu
 
 I participated in Advent of Code 2023,
-competing with 17 other participants on a private leaderboard.
+competing with 17 others on a private leaderboard.
 I entered the contest a couple weeks late,
-and I missed out on the opportunity to gain some early points.
+and I missed out on some early points.
 
 On March 31, 2024, I was first on our leaderboard to solve all 50
-problems, with 660 points. I was first to finish, but only second
+problems, with 660 points. First to finish, but only second
 place in points when I finished.
 
 Here are my solutions, cleaned up, straightened out, and edited for
@@ -26,8 +26,8 @@ This was my first time participating in Advent of Code. Problems were
 easy at first. I solved many of them that first Saturday.
 I solved many problems before I ever received a "wrong answer" message.
 I solved many problems before I ever defined a function.
-I defined only one class, and I could easily do without that definition.
-I edited my solutions to use **no classes**.
+I defined only one class, and I could easily do without that definition, so
+I have edited my solutions to use **no classes**.
 
 TODO verify claim no classes.
 
@@ -41,16 +41,18 @@ many little details to worry about.
 
 TODO hyperlinks to selected problems
 
+Congratulations to Eric Wastl on creating a nice set of problems
+for this competition. The visual presentation is impressive.
+
+## Running
+
 If you want to run my scripts, you will need Python.
 I used Python 3.10, but any recent Python should work.
 You should find the problem statement and problem inputs at the
 Advent of Code web site.
-Record your problem input in a file named
-"input.txt" so that my script can find it.
-TODO update input loc
-
-Congratulations to Eric Wastl on creating a nice set of problems
-for this competition. The visual presentation is impressive.
+Record your problem inputs, one file per day, in files named
+"input/01.txt", "input/02.txt", and so on.
+Then run `python3 d01p1.py`, for example.
 
 ## Comments
 
@@ -121,7 +123,7 @@ function, so that a simple method like gradient descent should work.
 
 I cooked up an objective function. I went to compute the gradient exactly, but this
 was nontrivial. Instead I did an axis-aligned search, constrained to the nonnegative
-quadrant, in the plus and minus directions along each axis at distances 1, 10, ..., 10^9
+quadrant, in the plus and minus directions along each axis at distances 1, 10, ..., 1 billion
 or so, and this method of search quickly found the solution.
 
 ### Day 25

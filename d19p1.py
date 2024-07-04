@@ -1,6 +1,3 @@
-import d19
-
-
 def result(D, name, xmas):  # xmas is a tuple of ratings in categories x, m, a, s
     for rule in D[name]:  # D[name] is like ["a<2006:qkq", "m>2090:A", "rfg"]
         if rule in ["A", "R"]:  # rule is an ultimate outcome
@@ -17,8 +14,8 @@ def result(D, name, xmas):  # xmas is a tuple of ratings in categories x, m, a, 
         else:  # rule is just a name
             return result(D, rule, xmas)
 
-
-D, X = d19.workflows_ratings("input.txt")
+import d19
+D, X = d19.workflows_ratings()
 ans = 0
 for xmas in X:
     if result(D, "in", xmas) == "A":

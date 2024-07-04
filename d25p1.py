@@ -70,7 +70,7 @@ smallest_cut_size = -1
 
 while True:
     num_verts = len(V)  # superverts
-    parent = list(range(len(V)))
+    parent = list(range(len(V)))  # union-find
     AK = list(range(len(A)))
 
     while 2 < num_verts:

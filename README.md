@@ -92,7 +92,40 @@ In part 1, we may tally the load without moving any rocks around.
 In part 2, we have to move rocks around, as far as I can tell.
 We can do a northward tilt in linear time.
 
+### Day 19
+
+Part 1 is straightforward.
+
+In part 2, we begin with a large 4D ("xmas") space and chop it up just enough
+to follow the rules.
+
+### Day 24
+
+Part 1 was straightforward.
+
+Part 2 wasn't obvious to me.
+I tried many ideas before I found one that worked.
+
+The solution trajectory traces a line that meets the trajectory lines of all the inputs.
+There should be a unique line containing the solution trajectory, provided the input is
+"nondegenerate." (It is easy to verify that the input is nondegenerate.) It should be
+straightforward to derive the solution trajectory from the unique line, so the hard part
+is to find the (unique) line.
+
+This problem (of finding a line that meets many other given lines in 3D space) seems like
+a least-squares problem. I did not manage to cast it as a least-squares problem. However,
+if we consider it as a more general problem of optimization (find a line near as possible
+to many other lines), it is easy to imagine that there are only a few independent variables
+(I brought it down to 2 real variables), and there should be a well-behaved objective
+function, so that a simple method like gradient descent should work.
+
+I cooked up an objective function. I went to compute the gradient exactly, but this
+was nontrivial. Instead I did an axis-aligned search, constrained to the nonnegative
+quadrant, in the plus and minus directions along each axis at distances 1, 10, ..., 10^9
+or so, and this method of search quickly found the solution.
+
 ### Day 25
 
-I don't recall ever reading about Karger's algorithm until my first efforts toward
-solving this problem were too slow.
+My first efforts toward solving this problem were too slow.
+I searched for algorithms that find small cuts.
+I found Karger's algorithm, which is remarkably simple and useful here.

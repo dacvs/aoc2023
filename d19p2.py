@@ -9,7 +9,6 @@ import d19
 #     B20 < a <= B21
 #     B30 < s <= B31
 
-
 def chop(ineq, box):  
     """
     Args:
@@ -30,8 +29,7 @@ def chop(ineq, box):
         boxF[i][1] = num
     return boxT, boxF
 
-
-D, _ = d19.workflows_ratings("input.txt")
+D, _ = d19.workflows_ratings()
 box = np.array(((0, 4000), (0, 4000), (0, 4000), (0, 4000)))  # (c, d], order "xmas"
 box_name_ks = [(box, "in", 0)]  # k: index into name's rules
 ans = 0

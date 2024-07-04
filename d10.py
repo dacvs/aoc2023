@@ -44,9 +44,6 @@ def graph_start():
     is an odd-odd pair (as a vertex of the new graph).
     """
     A = np.array([list(s) for s in lib.block("input/10.txt")])
-    #A = np.array([list(s) for s in lib.block("../10/test1.txt")])
-    #print("A")
-    #print(A)
     I, J = A.shape
 
     # Convert A to graph whose vertex set is [0, 1, ..., 2*I+1] x [0, 1, ..., 2*J+1]

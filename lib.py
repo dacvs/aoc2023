@@ -41,28 +41,6 @@ def dfs(N, u0):
                 stack.append(v)
     return out
 
-def component(N, u0):
-    # TODO clarify. Maybe "reachable"? Singly conn component? weak component?
-    # TODO simplify -- or formulate as DFS or BFS?
-    """
-    In a directed graph where N[v] is the outneighborhood of vertex v, find the
-    component that contains vertex u0. Return the set of vertices of that component.
-    """
-    N = {u: list(N[u]) for u in N}  # make a copy
-    out = set()
-    stack = [u0]
-    while stack:
-        u = stack[-1]
-        while N[u] and N[u][-1] in out:
-            N[u].pop()
-        if N[u]:
-            v = N[u].pop()
-            stack.append(v)
-        else:
-            stack.pop()
-            out |= set([u])
-    return out
-
 def topsort(N):
     N = {u: list(N[u]) for u in N}  # make a copy with lists (not sets)
     emitted = set()

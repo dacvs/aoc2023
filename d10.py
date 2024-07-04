@@ -46,7 +46,7 @@ def graph_start():
     A = np.array([list(s) for s in lib.block("input/10.txt")])
     I, J = A.shape
 
-    # Convert A to graph whose vertex set is [0, 1, ..., 2*I+1] x [0, 1, ..., 2*J+1]
+    # Convert A to graph whose vertex set is [0, 1, ..., 2*I] x [0, 1, ..., 2*J]
     N = {(a, b): set() for a in range(2 * I + 1) for b in range(2 * J + 1)}
     for i in range(I):
         for j in range(J):

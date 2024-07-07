@@ -68,9 +68,24 @@ NumPy arrays. Why not?
 
 Keep it simple.
 
-### Day 12
+### Day 6
 
-Please see the Advent of Code site for the problem statement.
+In part 2, some of the numbers involved are fairly large, possibly too large
+for 64-bit floats.
+This worked fine for me:
+
+    D = t * t - 4 * d
+    R = (t + np.sqrt(D)) / 2
+    r = (t - np.sqrt(D)) / 2
+    print("ans", int(np.floor(R) - np.ceil(r) + 1))
+
+But this may not work well for (larger) inputs different than mine.
+Plain old Python's `math.isqrt()` (integer square root) may work,
+but my (arbitrary) policy allows no libraries but NumPy.
+I wrote my own `isqrt()` as in [Wikipedia](https://en.wikipedia.org/wiki/Integer_square_root#Algorithm_using_binary_search).
+
+### Day 12
+Please see the Advent of Code site for the [problem statement](https://adventofcode.com/2023/day/12).
 
 Let C be the set of characters '.', '#', and '?'.
 Let W be a string of characters from C.
@@ -96,14 +111,36 @@ We can do a northward tilt in linear time.
 
 ### Day 19
 
-Part 1 is straightforward.
-
 In part 2, we begin with a large 4D ("xmas") space and chop it up just enough
 to follow the rules.
 
-### Day 24
+### Day 20
 
-Part 1 was straightforward.
+Each pulse is Hi or Lo.
+When a module sends a pulse, it sends that type of pulse to each of its
+destination modules.
+
+Flip-flop module (prefix "%") is on or off, initially off.
+ When it receives Hi, it does nothing.
+ When it receives Lo, it flips between on, off.
+ If it was off, it turns on and sends Hi.
+ If it was on, it turns off and sends Lo.
+
+Conjunction module (prefix "&") remembers the type of the most recent pulse
+received from each input module.
+Initially remembers Lo.
+When a pulse is received, the module first updates its memory for that input.
+Then if it remembers all Hi, it sends Lo. Otherwise sends Hi. (Like Nand).
+
+Broadcast module (only one exists).
+When it receives a pulse, sends the same pulse to all its destinations.
+
+Button module when pushed emits Lo to broadcast module.
+After pushing button, must wait till all pulses delivered before pushing again.
+
+Pulses processed in the order sent.
+
+### Day 24
 
 Part 2 wasn't obvious to me.
 I tried many ideas before I found one that worked.
@@ -128,6 +165,6 @@ or so, and this method of search quickly found the solution.
 
 ### Day 25
 
-My first efforts toward solving this problem were too slow.
+My first efforts toward solving this problem ran too slowly.
 I searched for algorithms that find small cuts.
-I found Karger's algorithm, which is remarkably simple and useful here.
+I found Karger's algorithm, which is remarkably simple.

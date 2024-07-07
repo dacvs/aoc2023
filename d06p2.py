@@ -15,7 +15,7 @@ def num_ways(t, d):
     # We are counting integer values of x in interval [0, t) where d < (t - x) * x.
     # That is, where x * x - t * x + d < 0.
     # The left side of the inequality is a quadratic polynomial (in x). The count is
-    # floor(R) - ceil(r) + 1 where r and R (with r <= R) are the roots of the polynomial.
+    # floor(R) - ceil(r) + 1 where r and R are the roots of the polynomial, r <= R.
     D = t * t - 4 * d
     if 0 <= D:
         _, q = isqrt(D)
@@ -25,9 +25,9 @@ def num_ways(t, d):
         spread = list(range(-4, 5))
         hipool = [R + n for n in spread]
         lopool = [r + n for n in spread]
-        lo = [n for n in lopool if f(n) < 0 <= f(n - 1)]
         hi = [n for n in hipool if f(n) < 0 <= f(n + 1)]
-        if lo and hi:
+        lo = [n for n in lopool if f(n) < 0 <= f(n - 1)]
+        if hi and lo:
             return hi[0] - lo[0] + 1
     return 0
 

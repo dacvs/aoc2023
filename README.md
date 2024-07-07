@@ -79,7 +79,7 @@ This worked fine for me:
     r = (t - np.sqrt(D)) / 2
     print("ans", int(np.floor(R) - np.ceil(r) + 1))
 
-But this may not work well for (larger) inputs different than mine.
+But this may not work well for (larger) inputs other than mine.
 Plain old Python's `math.isqrt()` (integer square root) may work,
 but my (arbitrary) policy allows no libraries but NumPy.
 I wrote my own `isqrt()` as in [Wikipedia](https://en.wikipedia.org/wiki/Integer_square_root#Algorithm_using_binary_search).

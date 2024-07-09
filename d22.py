@@ -41,10 +41,13 @@ def d22():
     A = np.array([str2list(s) for s in lib.block("input/22.txt")])
     A = A.reshape(-1, 2, 3)
     N = {}
+    num_arcs = 0
     for u in range(len(A)):
         if u % 50 == 0:
             print(f"Compute neighborhoods {u} / {len(A)}")
         N[u] = list(nbhd(A, u))
+        num_arcs += len(N[u])
+    print("NUM ARCS", num_arcs)
     V = lib.topsort_verified(N)  # first vertices of V are lowest
     for u in V:
         drop(A, N, u)

@@ -4,8 +4,8 @@ bottom = set(u for u in V if not d22.supporters(A, N, u))
 ans = 0
 for i, u in enumerate(V):
     # remove u and then all unsupported bricks above
-    if i % 50 == 0:
-        print(f"Remove {i} / {len(V)} u={u}")
+    if i % 100 == 0:
+        print(f"Remove {i} / {len(V)}")
     gone = set([u])
     for v in V[i + 1:]:
         if not v in bottom:

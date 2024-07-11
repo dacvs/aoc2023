@@ -8,6 +8,6 @@ ans = 0
 for w in range(len(A)):
     if removable(A, N, w):
         ans += 1
-    if w % 50 == 0:
+    if w % 100 == 0:
         print(f"Removable {w} / {len(A)}")
 print("ans", ans)

@@ -1,12 +1,24 @@
 def blocks(filename):
+    """
+    Advent of Code input files sometimes have multiple sections delimited by empty lines.
+    Yield each section ("block") of the file as a list of lines. (Newlines are gone.)
+    """
     with open(filename) as f:
         for block in f.read().split("\n\n"):
             yield [line for line in block.split("\n") if line]
 
-def block(filename):  # when only 1 block is expected
+def block(filename):
+    """
+    Return the first block of a file as a list of lines.
+    """
     return next(blocks(filename))
 
 def split(line, seps):
+    """
+    Split a string into fields, where fields are delimited by a (possibly
+    varying) sequence of separators. Returns one more field than separator.
+    For example, split("f: a -> b", [": ", " -> "]) returns ["f", "a", "b"].
+    """
     out = []
     for sep in seps:
         pre, line = line.split(sep, maxsplit=1)
@@ -20,8 +32,7 @@ def symmetrize(N):
     """
     for u in N:
         for v in N[u]:
-            if not u in N[v]:
-                N[v] |= set([u])
+            N[v] |= set([u])
 
 def dfs(N, u0):
     """
@@ -42,6 +53,11 @@ def dfs(N, u0):
     return out
 
 def topsort(N):
+    """
+    Topological sort of a directed graph represented by N.
+    N is a dictionary. Each vertex is mapped to a collection of its neighbors.
+    Yield each vertex in proper order.
+    """
     N = {u: list(N[u]) for u in N}  # make a copy with lists (not sets)
     emitted = set()
     stack = []
@@ -61,6 +77,10 @@ def topsort(N):
                     yield u
 
 def topsort_verified(N):
+    """
+    Topological sort (see `topsort` above) with work done afterward to ensure
+    vertices are in proper order. Return sequence of vertices as a list.
+    """
     V = list(topsort(N))
     D = {u: i for i, u in enumerate(V)}
     assert len(V) == len(N)

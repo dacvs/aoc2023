@@ -28,7 +28,7 @@ for k in range(len(N)):
                         d = g[v][X] + arc_wt[u, v]
                         if (not Y in G[u]) or G[u][Y] < d:
                             G[u][Y] = d
-    # longest path from Beg to End
+    # heaviest path from Beg to End
     for X in G[Beg]:
         if maxg < G[Beg][X]:
             maxg = G[Beg][X]

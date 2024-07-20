@@ -1,15 +1,11 @@
 import numpy as np
 import lib
 
-ch_vec = {
-    '>': ( 0, +1),
-    'v': (+1,  0),
-    '<': ( 0, -1),
-    '^': (-1,  0)}
-
 def go(i, j, ch):  # ch is one of "<>v^"
-    di, dj = ch_vec[ch]
-    return i + di, j + dj
+    if ch == '>': return i, j + 1
+    if ch == 'v': return i + 1, j
+    if ch == '<': return i, j - 1
+    if ch == '^': return i - 1, j
 
 def grid_nbhd(T, i, j):
     I, J = T.shape

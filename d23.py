@@ -44,7 +44,7 @@ def trail_graph():
     """
     Convert day 23 problem input to a trail graph.
 
-    Returns: tuple (Beg, End, V, N, arc_wt)
+    Returns: tuple (Beg, End, N, arc_wt)
         Beg:    beginning vertex (we begin BEFORE the first row)
         End:    ending vertex
         N:      if u is a vertex, then N[u] is the set of its outneighbors

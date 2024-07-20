@@ -140,29 +140,6 @@ After pushing button, must wait till all pulses delivered before pushing again.
 
 Pulses processed in the order sent.
 
-### Day 24
-
-Part 2 wasn't obvious to me.
-I tried many ideas before I found one that worked.
-
-The solution trajectory traces a line that meets the trajectory lines of all the inputs.
-There should be a unique line containing the solution trajectory, provided the input is
-"nondegenerate." (It is easy to verify that the input is nondegenerate.) It should be
-straightforward to derive the solution trajectory from the unique line, so the hard part
-is to find the (unique) line.
-
-This problem (of finding a line that meets many other given lines in 3D space) seems like
-a least-squares problem. I did not manage to cast it as a least-squares problem. However,
-if we consider it as a more general problem of optimization (find a line near as possible
-to many other lines), it is easy to imagine that there are only a few independent variables
-(I brought it down to 2 real variables), and there should be a well-behaved objective
-function, so that a simple method like gradient descent should work.
-
-I cooked up an objective function. I went to compute the gradient exactly, but this
-was nontrivial. Instead I did an axis-aligned search, constrained to the nonnegative
-quadrant, in the plus and minus directions along each axis at distances 1, 10, ..., 1 billion
-or so, and this method of search quickly found the solution.
-
 ### Day 23
 
 The following example input is given in the problem statement.
@@ -218,10 +195,34 @@ To make things clearer at start and finish, I add two arrows as follows.
     #.....###...###...#..v#
     #####################.#
 
-In part 2, I keep the weights of heaviest paths over a large domain (vertex sets with a spanning path to the End).
+In part 2, I keep the weights of heaviest paths over a large domain
+(vertex sets with a spanning path to the End).
 This takes a lot of memory, nearly 4GB on my machine.
 It would be nice to shrink that down without complicating the algorithm.
 On the other hand, most people these days have 4GB lying around.
+
+### Day 24
+
+Part 2 wasn't obvious to me.
+I tried many ideas before I found one that worked.
+
+The solution trajectory traces a line that meets the trajectory lines of all the inputs.
+There should be a unique line containing the solution trajectory, provided the input is
+"nondegenerate." (It is easy to verify that the input is nondegenerate.) It should be
+straightforward to derive the solution trajectory from the unique line, so the hard part
+is to find the (unique) line.
+
+This problem (of finding a line that meets many other given lines in 3D space) seems like
+a least-squares problem. I did not manage to cast it as a least-squares problem. However,
+if we consider it as a more general problem of optimization (find a line near as possible
+to many other lines), it is easy to imagine that there are only a few independent variables
+(I brought it down to 2 real variables), and there should be a well-behaved objective
+function, so that a simple method like gradient descent should work.
+
+I cooked up an objective function. I went to compute the gradient exactly, but this
+was nontrivial. Instead I did an axis-aligned search, constrained to the nonnegative
+quadrant, in the plus and minus directions along each axis at distances
+1, 10, ..., 1 billion or so, and this method of search quickly found the solution.
 
 ### Day 25
 

@@ -33,4 +33,4 @@ for k in range(len(N)):
         if maxg < G[Beg][X]:
             maxg = G[Beg][X]
     print(f"k={k} maxg={maxg}")
-print("ans", maxg - 1)  # -1 because BEg is BEFORE the first row
+print("ans", maxg - 1)  # -1 because Beg is BEFORE the first row

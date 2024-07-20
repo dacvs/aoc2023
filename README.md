@@ -165,7 +165,7 @@ or so, and this method of search quickly found the solution.
 
 ### Day 23
 
-This example input comes from the problem statement.
+The following example input is given in the problem statement.
 Enter at the top and exit at the bottom, obeying the arrows.
 
     #.#####################
@@ -192,7 +192,7 @@ Enter at the top and exit at the bottom, obeying the arrows.
     #.....###...###...#...#
     #####################.#
 
-I added two arrows as follows.
+To make things clearer at start and finish, I add two arrows as follows.
 
     #v#####################
     #.......#########...###
@@ -218,9 +218,10 @@ I added two arrows as follows.
     #.....###...###...#..v#
     #####################.#
 
-In part 2, I keep the weights of heaviest paths over a large domain (vertex sets with a spanning path ending at vertex End).
+In part 2, I keep the weights of heaviest paths over a large domain (vertex sets with a spanning path to the End).
 This takes a lot of memory, nearly 4GB on my machine.
 It would be nice to shrink that down without complicating the algorithm.
+On the other hand, most people these days have 4GB lying around.
 
 ### Day 25
 

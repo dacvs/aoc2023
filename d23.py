@@ -7,7 +7,7 @@ ch_vec = {
     '<': ( 0, -1),
     '^': (-1,  0)}
 
-def go(i, j, ch):
+def go(i, j, ch):  # ch is one of "<>v^"
     di, dj = ch_vec[ch]
     return i + di, j + dj
 

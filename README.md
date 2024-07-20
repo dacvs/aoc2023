@@ -163,6 +163,65 @@ was nontrivial. Instead I did an axis-aligned search, constrained to the nonnega
 quadrant, in the plus and minus directions along each axis at distances 1, 10, ..., 1 billion
 or so, and this method of search quickly found the solution.
 
+### Day 23
+
+This example input comes from the problem statement.
+Enter at the top and exit at the bottom, obeying the arrows.
+
+    #.#####################
+    #.......#########...###
+    #######.#########.#.###
+    ###.....#.>.>.###.#.###
+    ###v#####.#v#.###.#.###
+    ###.>...#.#.#.....#...#
+    ###v###.#.#.#########.#
+    ###...#.#.#.......#...#
+    #####.#.#.#######.#.###
+    #.....#.#.#.......#...#
+    #.#####.#.#.#########v#
+    #.#...#...#...###...>.#
+    #.#.#v#######v###.###v#
+    #...#.>.#...>.>.#.###.#
+    #####v#.#.###v#.#.###.#
+    #.....#...#...#.#.#...#
+    #.#########.###.#.#.###
+    #...###...#...#...#.###
+    ###.###.#.###v#####v###
+    #...#...#.#.>.>.#.>.###
+    #.###.###.#.###.#.#v###
+    #.....###...###...#...#
+    #####################.#
+
+I added two arrows as follows.
+
+    #v#####################
+    #.......#########...###
+    #######.#########.#.###
+    ###.....#.>.>.###.#.###
+    ###v#####.#v#.###.#.###
+    ###.>...#.#.#.....#...#
+    ###v###.#.#.#########.#
+    ###...#.#.#.......#...#
+    #####.#.#.#######.#.###
+    #.....#.#.#.......#...#
+    #.#####.#.#.#########v#
+    #.#...#...#...###...>.#
+    #.#.#v#######v###.###v#
+    #...#.>.#...>.>.#.###.#
+    #####v#.#.###v#.#.###.#
+    #.....#...#...#.#.#...#
+    #.#########.###.#.#.###
+    #...###...#...#...#.###
+    ###.###.#.###v#####v###
+    #...#...#.#.>.>.#.>.###
+    #.###.###.#.###.#.#v###
+    #.....###...###...#..v#
+    #####################.#
+
+In part 2, I keep the weights of heaviest paths over a large domain (vertex sets with a spanning path ending at vertex End).
+This takes a lot of memory, nearly 4GB on my machine.
+It would be nice to shrink that down without complicating the algorithm.
+
 ### Day 25
 
 My first efforts toward solving this problem ran too slowly.

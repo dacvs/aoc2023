@@ -27,14 +27,14 @@ def outlets(T, i, j):
 def trace_trail(T, x):
     """beginning at arrow x = (i, j), follow trail to next arrow and one past"""
     trod = set([x])
-    x = go(*x, T[x])  # first arrow
-    dist = 2  # = |{start, first arrow}|
+    x = go(*x, T[x])  # ArrowArcBegins
+    dist = 2  # = |{start, ArrowArcBegins}|
     while not T[x] in "<>^v":
         trod |= set([x])
         x = [v for v in grid_nbhd(T, *x) if T[v] != '#' and not v in trod][0]
         dist += 1
-    x = go(*x, T[x])  # last arrow
-    return x, dist + 1  # +1 = |{last arrow}|
+    x = go(*x, T[x])  # ArrowArcEnds
+    return x, dist + 1  # +1 = |{ArrowArcEnds}|
 
 def trail_graph():
     """

@@ -27,7 +27,7 @@ def split(line, seps):
 
 def symmetrize(N):
     """
-    Let N represent a directed graph where set N[v] is the outneighborhood of vertex v.
+    Let N represent a directed graph where set N[u] is the outneighborhood of vertex u.
     Extend N so that N[v] contains u whenever N[u] contains v.
     """
     for u in N:
@@ -36,9 +36,9 @@ def symmetrize(N):
 
 def dfs(N, u0):
     """
-    Let N represent a symmetric directed graph where set N[v] is the outneighborhood of vertex v.
-    Do a depth-first search from u0. Return a list in proper order, beginning with v, of
-    vertices in the component of u0. Each vertex appears once.
+    Let N represent a symmetric directed graph where set N[u] is the outneighborhood of
+    vertex u. Do a depth-first search from u0. Return a list in proper order, beginning
+    with u0, of vertices in the component of u0. Each vertex appears once.
     """
     out = []
     seen = set()

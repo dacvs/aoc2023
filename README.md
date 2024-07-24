@@ -197,9 +197,9 @@ To make things clearer at start and finish, I add two arrows as follows.
 
 In part 2, I keep the weights of heaviest paths over a large domain
 (vertex sets with a spanning path to the End).
-This takes a lot of memory, nearly 4GB on my machine.
+This takes a lot of memory, nearly 4 GB on my machine.
 It would be nice to shrink that down without complicating the algorithm.
-On the other hand, most people these days have 4GB lying around.
+On the other hand, most people these days have 4 GB lying around.
 
 ### Day 24
 

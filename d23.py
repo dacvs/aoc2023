@@ -7,7 +7,7 @@ def go(i, j, ch):  # ch is one of "<>v^"
     if ch == '<': return i, j - 1
     if ch == '^': return i - 1, j
 
-def grid_nbhd(T, i, j):
+def grid_nbrs(T, i, j):
     I, J = T.shape
     for ch in "<>v^":
         a, b = go(i, j, ch)
@@ -16,25 +16,13 @@ def grid_nbhd(T, i, j):
 
 def is_trail_vertex(T, i, j):  # internal vertex: a vertex other than Beg or End
     """Is cell (i, j) an internal vertex of the trail graph (see below)?"""
-    return T[i, j] == '.' and 1 < sum(1 for v in grid_nbhd(T, i, j) if T[v] in "<>v^")
+    return T[i, j] == '.' and 1 < sum(1 for v in grid_nbrs(T, i, j) if T[v] in "<>v^")
 
 def outlets(T, i, j):
     """cells adjacent to (i, j) containing an arrow directed out from (i, j)"""
-    for (a, b) in grid_nbhd(T, i, j):
+    for (a, b) in grid_nbrs(T, i, j):
         if T[a, b] in "<>v^" and (a, b) == go(i, j, T[a, b]):
-            yield (a, b)
-
-def trace_trail(T, x):
-    """beginning at arrow x = (i, j), follow trail to next arrow and one past"""
-    trod = set([x])
-    x = go(*x, T[x])  # ArrowArcBegins
-    dist = 2  # = |{start, ArrowArcBegins}|
-    while not T[x] in "<>^v":
-        trod |= set([x])
-        x = [v for v in grid_nbhd(T, *x) if T[v] != '#' and not v in trod][0]
-        dist += 1
-    x = go(*x, T[x])  # ArrowArcEnds
-    return x, dist + 1  # +1 = |{ArrowArcEnds}|
+            yield a, b
 
 def trail_graph():
     """
@@ -73,19 +61,24 @@ def trail_graph():
     T[EndArrow] = 'v'
 
     # TRAIL GRAPH VERTICES
+    V = set((i, j) for i in range(I) for j in range(J) if is_trail_vertex(T, i, j))
 
-    V = [Beg, End]
-    V += [(i, j) for i in range(I) for j in range(J) if is_trail_vertex(T, i, j)]
+    # HELPER GRAPH FOR TRACING TRAILS
+    def tracing_nbhd(T, i, j):
+        return set(v for v in grid_nbrs(T, i, j) if T[v] != '#' and not (i, j) in V)
+
+    Nt = {(i, j): tracing_nbhd(T, i, j) for i in range(I) for j in range(J)}
 
     # TRAIL GRAPH NEIGHBORHOODS AND WEIGHTS
-
     N = {}
     arc_wt = {}
-    for u in V:
+    for u in V | set([Beg, End]):
         N[u] = set()
         for x in outlets(T, *u):
-            v, w = trace_trail(T, x)
+            Nt[x] -= set([u])
+            U = lib.dfs(Nt, x)
+            v = U[-1]
             N[u] |= set([v])
-            arc_wt[u, v] = w
+            arc_wt[u, v] = len(U)
 
     return Beg, End, N, arc_wt

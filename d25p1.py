@@ -35,44 +35,43 @@ for i in M:
     for j in M[i]:
         if i < j:
             E.append((i, j))
-E = sorted(E)
+E.sort()
 
-# Karger's algorithm:
-
+# KARGER'S ALGORITHM
+#
 # Until only 2 vertices remain:
 #     Choose an edge e uniformly at random.
 #     Contract e.
 # The remaining cut is the one we want, if it is a 3-cut.
 # May need to try many times. We expect at most n^2 log n times.
-
+#
 # Need a graph structure that supports the operations.
-# If we keep an edge as a pair of verts, there is no need to do anything
+# If we keep an edge as a pair of vertices, there is no need to do anything
 # with the edges except mark them as contracted (deleted). Vertices need
 # to know which other vertices they have been grouped with. Union-Find.
 
 smallest_cut_size = -1
-
 while True:
-    num_verts = len(V)  # superverts
+    num_vertices = len(V)  # supervertices
     parent = list(range(len(V)))  # union-find
     AK = list(range(len(A)))
 
-    while 2 < num_verts:
-        # choose an edge e uniformly at random ######################################
+    while 2 < num_vertices:
+        # CHOOSE AN EDGE UNIFORMLY AT RANDOM
         t = np.random.randint(len(AK))
         k = AK[t]
         AK[t] = AK[-1]
         AK.pop()
 
-        # contract e ################################################################
+        # CONTRACT THE CHOSEN EDGE
         i, j = E[k]
         x = find(parent, i)
         y = find(parent, j)
         if x != y:
             parent[y] = parent[x]  # the union operation of the union-find data structure
-            num_verts -= 1
+            num_vertices -= 1
 
-    # the remaining cut
+    # THE REMAINING CUT
     cut = []
     for k in AK:
         i, j = E[k]
@@ -81,12 +80,12 @@ while True:
         if x != y:
             cut.append((V[i], V[j]))
 
-    if smallest_cut_size < 0 or smallest_cut_size > len(cut):
+    if not 0 <= smallest_cut_size <= len(cut):
         smallest_cut_size = len(cut)
     print(f"smallest_cut_size={smallest_cut_size}, len(cut)={len(cut)}")
 
     if len(cut) <= 3:
-        # remove the cut
+        # REMOVE THE CUT
         for a in cut:
             u, v = a
             N[u] = set(w for w in N[u] if w != v)

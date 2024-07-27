@@ -11,14 +11,22 @@ On March 31, 2024, I was first on our leaderboard to solve all 50
 problems, with 660 points. First to finish, but only second
 place in points when I finished.
 
+## Python + NumPy only, no classes
+
 Here are my solutions, cleaned up, straightened out, and edited for
-consistency. I used **Python** only.
+consistency. I used **Python only**.
 Occasionally I experimented with other tools, including SymPy and
 Sage Mathematics, before I switched back to Python.
 
-The only library I really needed was NumPy.
-In places where I used other libraries (`import sys`, `import math`,
-`import random`), I have edited my solutions to use **NumPy only**.
+The only library I really needed was NumPy. In places where I used other libraries,
+I have edited my solutions to use **NumPy only**.
+
+To be clear, I spell out my arbitrary "NumPy only" rule with a few examples:
+- `import sys` is forbidden. No libraries but NumPy, not even imports of the standard library.
+- `import math` is forbidden. Same reason.
+- `import random` is forbidden. Same reason.
+- `import d03` is ok. This module `d03` contains my code for day 3 that is shared by my solutions to parts 1 and 2 of day 3.
+- `import lib` is ok. This module `lib` contains my code that is available to all my solutions.
 
 TODO verify claim NumPy only.
 
@@ -31,15 +39,11 @@ I have edited my solutions to use **no classes**.
 
 TODO verify claim no classes.
 
-- Problem 24 part 2 was hardest for me.
+- [Problem 24 part 2](#day-24) was hardest for me.
 
-- Problem __ (TODO the infinite grid one) was tough, as there were
-many little details to worry about.
+- [Problem 21](#day-21) was tough, as there were many little details to worry about.
 
-- Problem 25 is the one where I had to learn something new
-(Karger's algorithm).
-
-TODO hyperlinks to selected problems
+- For [problem 25](#day-25), I had to learn something new.
 
 Congratulations to Eric Wastl on creating a nice set of problems
 for this competition. The visual presentation is impressive.
@@ -74,10 +78,12 @@ In part 2, some of the numbers involved are fairly large, possibly too large
 for 64-bit floats.
 This worked fine for me:
 
-    D = t * t - 4 * d
-    R = (t + np.sqrt(D)) / 2
-    r = (t - np.sqrt(D)) / 2
-    print("ans", int(np.floor(R) - np.ceil(r) + 1))
+```python
+D = t * t - 4 * d
+R = (t + np.sqrt(D)) / 2
+r = (t - np.sqrt(D)) / 2
+print("ans", int(np.floor(R) - np.ceil(r) + 1))
+```
 
 But this may not work well for (larger) inputs other than mine.
 Plain old Python's `math.isqrt()` (integer square root) may work,

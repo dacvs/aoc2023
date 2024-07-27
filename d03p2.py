@@ -7,6 +7,6 @@ for i in range(I):
         if A[i, j] == '*':
             components = set(d03.adjacent_components(A, C, i, j))
             if len(components) == 2:
-                m, n = (Z[u] for u in components)
+                m, n = [Z[u] for u in components]
                 ans += m * n
 print("ans", ans)

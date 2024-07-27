@@ -21,12 +21,13 @@ Sage Mathematics, before I switched back to Python.
 The only library I really needed was NumPy. In places where I used other libraries,
 I have edited my solutions to use **NumPy only**.
 
-To be clear, I spell out my arbitrary "NumPy only" rule with a few examples:
-- `import sys` is forbidden. No libraries but NumPy, not even imports of the standard library.
-- `import math` is forbidden. Same reason.
-- `import random` is forbidden. Same reason.
-- `import d03` is ok. This module `d03` contains my code for day 3 that is shared by my solutions to parts 1 and 2 of day 3.
-- `import lib` is ok. This module `lib` contains my code that is available to all my solutions.
+For example:
+- `import numpy as np` is **allowed**, of course.
+- `import sys` is **forbidden**. No libraries but NumPy, not even imports of the standard library.
+- `import math` is **forbidden**. Same reason.
+- `import random` is **forbidden**. Same reason.
+- `import d03` is **allowed**. Module `d03` contains my code for day 3 that is shared by my solutions to parts 1 and 2 of day 3.
+- `import lib` is **allowed**. Module `lib` contains my code that is available to all my solutions.
 
 TODO verify claim NumPy only.
 
@@ -121,6 +122,8 @@ In part 2, we begin with a large 4D ("xmas") space and chop it up just enough
 to follow the rules.
 
 ### Day 20
+
+The rules:
 
 Each pulse is Hi or Lo.
 When a module sends a pulse, it sends that type of pulse to each of its

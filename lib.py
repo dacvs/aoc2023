@@ -93,7 +93,8 @@ def topsort_verified(N):
 
 def dijkstra(N, W, u0, goal):
     """
-    Single-source shortest paths by Dijkstra's algorithm (with small integer weights).
+    Weight of lightest u0,v-path for each vertex v by Dijkstra's algorithm. This
+    implementation is intended for graphs with small integer weights.
     N is a dict that maps each vertex of a digraph to its collection of outneighbors.
     W is a dict of function that gives the weight of each arc of the graph.
     Whenever u is a key of N and v is in N[u], then (u, v) should be a key of W, (or in the

@@ -40,11 +40,13 @@ I have edited my solutions to use **no classes**.
 
 TODO verify claim no classes.
 
-- [Problem 24 part 2](#day-24) was hardest for me.
+These rules are arbitrary but interesting in an event like Advent of Code.
 
-- [Problem 21](#day-21) was tough, as there were many little details to worry about.
+- [Day 24 part 2](#day-24) was hardest.
 
-- For [problem 25](#day-25), I had to learn something new.
+- [Day 21](#day-21) was tough, as there were many little details to worry about.
+
+- For [day 25](#day-25), I had to learn something new.
 
 Congratulations to Eric Wastl on creating a nice set of problems
 for this competition. The visual presentation is impressive.
@@ -53,13 +55,16 @@ for this competition. The visual presentation is impressive.
 
 If you want to run my scripts, you will need Python.
 I used Python 3.10, but any recent Python should work.
-You should find the problem statement and problem inputs at the
-Advent of Code web site.
+You should find the problem statement and problem inputs at the Advent of Code web site.
 Record your problem inputs, one file per day, in files named
 "input/01.txt", "input/02.txt", and so on.
 Then run `python3 d01p1.py`, for example.
 
 ## Comments
+
+Here are some comments on my solutions.
+My solutions appear in the listing of files.
+For example, file d01p1.py is my solution to the problem of day 1, part 1.
 
 ### Day 2
 
@@ -89,10 +94,12 @@ print("ans", int(np.floor(R) - np.ceil(r) + 1))
 But this may not work well for (larger) inputs other than mine.
 Plain old Python's `math.isqrt()` (integer square root) may work,
 but my (arbitrary) policy allows no libraries but NumPy.
-I wrote my own `isqrt()` as in [Wikipedia](https://en.wikipedia.org/wiki/Integer_square_root#Algorithm_using_binary_search).
+I wrote my own `isqrt()` as in
+[Wikipedia](https://en.wikipedia.org/wiki/Integer_square_root#Algorithm_using_binary_search).
 
 ### Day 12
-Please see the Advent of Code site for the [problem statement](https://adventofcode.com/2023/day/12).
+Please see the Advent of Code site for the
+[problem statement](https://adventofcode.com/2023/day/12).
 
 Let C be the set of characters '.', '#', and '?'.
 Let W be a string of characters from C.
@@ -119,7 +126,7 @@ We can do a northward tilt in linear time.
 ### Day 19
 
 In part 2, we begin with a large 4D ("xmas") space and chop it up just enough
-to follow the rules.
+to send chunks where they belong according to the rules.
 
 ### Day 20
 
@@ -237,4 +244,6 @@ quadrant, in the plus and minus directions along each axis at distances
 
 My first efforts toward solving this problem ran too slowly.
 I searched for algorithms that find small cuts.
+(I searched the web for graph algorithms.
+I did not read discussions of Advent of Code problems.)
 I found Karger's algorithm, which is remarkably simple.

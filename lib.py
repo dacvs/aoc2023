@@ -1,3 +1,5 @@
+import numpy as np
+
 def blocks(filename):
     """
     Advent of Code input files sometimes have multiple sections delimited by empty lines.
@@ -88,3 +90,41 @@ def topsort_verified(N):
         for v in N[u]:
             assert D[u] > D[v]
     return V
+
+def dijkstra(N, W, u0, goal):
+    """
+    Single-source shortest paths by Dijkstra's algorithm (with small integer weights).
+    N is a dict that maps each vertex of a digraph to its collection of outneighbors.
+    W is a dict of function that gives the weight of each arc of the graph.
+    Whenever u is a key of N and v is in N[u], then (u, v) should be a key of W, (or in the
+    domain of W if W is a function), and W[u, v] (or W(u, v) if W is a function) is the
+    weight of arc (u, v). Weights should be nonnegative integers not too great in value.
+    Returns a dict that maps each vertex to its distance (possibly +inf) from vertex u0.
+    To stop the search when some vertex v of a particular goal subset of the vertex set
+    is reached, then pass this subset as `goal`. Else pass `goal = set()`. The goal vertex
+    that was reached (to stop the search) is the one with least distance value.
+    """
+    done = set()
+    D = {u: 0 if u == u0 else +np.inf for u in N}
+    Q = {0: [u0]}
+    maxd = 0  # largest key of Q
+    d = 0
+    while d <= maxd:
+        if d in Q and Q[d]:
+            u = Q[d].pop()
+            if not u in done:  # u is the nearest vertex not yet done
+                done |= set([u])
+                if u in goal:
+                    break
+                for v in N[u]:
+                    if not v in done:
+                        w = W(u, v) if callable(W) else W[u, v]
+                        if D[v] > D[u] + w:
+                            D[v] = D[u] + w
+                            if not D[v] in Q:
+                                Q[D[v]] = []
+                                maxd = max(maxd, D[v])
+                            Q[D[v]].append(v)
+        else:
+            d += 1
+    return D

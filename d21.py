@@ -15,7 +15,6 @@ def cartesian():
     Returns C, R. 
     """
     A = np.array([list(s) for s in lib.block("input/21.txt")])
-    #A = np.array([list(s) for s in lib.block("../21/test.txt")])
     I, J = A.shape
     assert I == J
     assert I % 2 == 1

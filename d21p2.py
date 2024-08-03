@@ -70,15 +70,15 @@ for x in range(-R, R + 1):
     for y in range(-R, R + 1):
         if C[x, y] != '#':
             N[x, y] = d21.nbhd(C, R, x, y)
+W = lambda u, v: 1
+goal = set()
 
 # BB[x0, y0][r, k] = #garden plots in a single tile reachable from (x0, y0)
 #     in <= r steps by an even walk if k=0, odd if k=1
 BB = {}
 for x0 in [-R, 0, +R]:
     for y0 in [-R, 0, +R]:
-        W = lambda u, v: 1
         u0 = (x0, y0)
-        goal = set()
         D = lib.dijkstra(N, W, u0, goal)
         D = {u: D[u] for u in D if D[u] < +np.inf}
         E = distance_vertices(D)

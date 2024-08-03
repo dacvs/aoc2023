@@ -11,10 +11,11 @@ On March 31, 2024, I was first on our leaderboard to solve all 50
 problems, with 660 points. First to finish, but only second
 place in points when I finished.
 
+Here are my solutions, cleaned up, straightened out, and edited for consistency.
+
 ## Python + NumPy only, no classes
 
-Here are my solutions, cleaned up, straightened out, and edited for
-consistency. I used **Python only**.
+I used **Python only**.
 Occasionally I experimented with other tools, including SymPy and
 Sage Mathematics, before I switched back to Python.
 
@@ -58,12 +59,12 @@ for this competition. The visual presentation is impressive.
 
 ## Running
 
-If you want to run my scripts, you will need Python.
+If you want to run my programs, you will need Python.
 I used Python 3.10, but any recent Python should work.
-You should find the problem statement and problem inputs at the Advent of Code web site.
-Record your problem inputs, one file per day, in files named
+- Find the problem statement and problem inputs at the Advent of Code web site.
+- Record your problem inputs, one file per day, in files named
 "input/01.txt", "input/02.txt", and so on.
-Then run `python3 d01p1.py`, for example.
+- Run `python3 d01p1.py`, for example.
 
 ## Comments
 
@@ -81,7 +82,7 @@ Keep it simple.
 
 ### Day 6
 
-In part 2, some of the numbers involved are fairly large, possibly too large
+In part 2, some of the numbers involved are large, possibly too large
 for 64-bit floats.
 This worked fine for me:
 

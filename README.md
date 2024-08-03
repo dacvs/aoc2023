@@ -22,7 +22,7 @@ The only library I really needed was NumPy. In places where I used other librari
 I have edited my solutions to use **NumPy only**.
 
 For example:
-- `import numpy as np` is _allowed_, of course.
+- `import numpy` is _allowed_, of course.
 - `import sys` is **forbidden**. No libraries but NumPy, not even imports of the standard library.
 - `import math` is **forbidden**. Same reason.
 - `import random` is **forbidden**. Same reason.
@@ -42,11 +42,16 @@ TODO verify claim no classes.
 
 These rules are arbitrary but interesting in an event like Advent of Code.
 
-- [Day 24 part 2](#day-24) was hardest.
+## Solutions
+
+Each solution has its own file.
+For example, file d01p2.py is my solution to the problem of day 1, part 2.
+
+- [Day 24](#day-24) part 2 was hardest. I just didn't know how to proceed.
 
 - [Day 21](#day-21) part 2 was tough, as there were many little details to worry about.
 
-- For [day 25](#day-25), I had to learn something new.
+- At [day 25](#day-25), I had to learn something new.
 
 Congratulations to Eric Wastl on creating a nice set of problems
 for this competition. The visual presentation is impressive.
@@ -61,10 +66,6 @@ Record your problem inputs, one file per day, in files named
 Then run `python3 d01p1.py`, for example.
 
 ## Comments
-
-Here are some comments on my solutions.
-My solutions appear in the listing of files.
-For example, file d01p1.py is my solution to the problem of day 1, part 1.
 
 ### Day 2
 
@@ -187,6 +188,7 @@ Let us address each tile by a pair (x, y) where x, y are integers.
 - The negative x axis (a _left-ray_) is the set of (x, 0) for x < 0.
 - The _up-ray_ at x = x0 is the set of (x0, y) for y > 0.
 - The _down-ray_ at x = x0 is the set of (x0, y) for y < 0.
+
 In this way, every tile but the origin belongs to exactly one ray.
 
 This is not the bulkiest scheme imaginable for quickly counting saturated tiles,
@@ -279,7 +281,7 @@ quadrant, in the plus and minus directions along each axis at distances
 ### Day 25
 
 My first efforts toward solving this problem ran too slowly.
-I searched for algorithms that find small cuts.
-(I searched the web for graph algorithms.
-I did not read discussions of Advent of Code problems.)
+I searched the web for algorithms that find small cuts.
+(I searched for graph algorithms. I did not read discussions of Advent of Code problems.)
 I found Karger's algorithm, which is remarkably simple.
+Works fine for day 25.

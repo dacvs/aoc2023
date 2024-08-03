@@ -44,7 +44,7 @@ These rules are arbitrary but interesting in an event like Advent of Code.
 
 - [Day 24 part 2](#day-24) was hardest.
 
-- [Day 21](#day-21) was tough, as there were many little details to worry about.
+- [Day 21](#day-21) part 2 was tough, as there were many little details to worry about.
 
 - For [day 25](#day-25), I had to learn something new.
 
@@ -155,6 +155,42 @@ Button module when pushed emits Lo to broadcast module.
 After pushing button, must wait till all pulses delivered before pushing again.
 
 Pulses processed in the order sent.
+
+### Day 21
+
+Please see the Advent of Code site for the
+[problem statement](https://adventofcode.com/2023/day/21).
+
+I don't know about you, but the map I received has certain clearings.
+I can see, even by eye, that I can travel from the starting position to the edge
+of the tile in a straight path without obstruction.
+
+In part 2, we count garden plots in many tiles.
+Due to the clearings, we may easily compute the lengths of shortest paths to distant tiles.
+However, the number of steps is large, over 10 million in my instance.
+
+The map measures only 100 by 100, roughly.
+All the garden plots are reachable in tiles near the origin.
+When all the garden plots of a certain tile are reachable, we call the tile _saturated_.
+
+We expect a large core of saturated tiles near the origin,
+then a few unsaturated tiles in a fringe around the core,
+and eventually tiles that cannot be reached.
+
+In order to count garden plots quickly, we would like to count
+plots in saturated tiles without dwelling on each saturated tile.
+
+My idea is to group tiles in "rays".
+Let us address each tile by a pair (x, y) where x, y are integers.
+- The origin is (x, y) = (0, 0).
+- The positive x axis (a _right-ray_) is the set of (x, 0) for x > 0.
+- The negative x axis (a _left-ray_) is the set of (x, 0) for x < 0.
+- The _up-ray_ at x = x0 is the set of (x0, y) for y > 0.
+- The _down-ray_ at x = x0 is the set of (x0, y) for y < 0.
+In this way, every tile but the origin belongs to exactly one ray.
+
+This is not the bulkiest scheme imaginable for quickly counting saturated tiles,
+but it runs fast enough, under 2 seconds on my computer.
 
 ### Day 23
 

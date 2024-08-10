@@ -48,7 +48,7 @@ These rules are arbitrary but interesting in an event like Advent of Code.
 Each solution has its own file.
 For example, file d01p2.py is my solution to the problem of day 1, part 2.
 
-- [Day 24](#day-24) part 2 was hardest. I just didn't know how to proceed.
+- [Day 24](#day-24) part 2 was hardest. It just wasn't obvious.
 
 - [Day 21](#day-21) part 2 was tough, as there were many little details to worry about.
 
@@ -64,7 +64,7 @@ I used Python 3.10, but any recent Python should work.
 - Find the problem statement and problem inputs at the Advent of Code web site.
 - Record your problem inputs, one file per day, in files named
 "input/01.txt", "input/02.txt", and so on.
-- Run `python3 d01p1.py`, for example.
+- Run `python3 d01p2.py`, for example.
 
 ## Comments
 
@@ -285,4 +285,4 @@ My first efforts toward solving this problem ran too slowly.
 I searched the web for algorithms that find small cuts.
 (I searched for graph algorithms. I did not read discussions of Advent of Code problems.)
 I found Karger's algorithm, which is remarkably simple.
-Works fine for day 25.
+Karger's algorithm worked fine for day 25.

@@ -15,10 +15,10 @@ def skewdist2(p1, d1, p2, d2):
     Each input line is determined by a point in the line and a vector.
 
     Args:
-        p1: first  point;  entries are Python (big) ints
-        d1: first  vector; entries are Python (big) ints
-        p2: second point;  entries are Python (big) ints
-        d2: second vector; entries are Python (big) ints
+        p1: first  point;  entries are Python big integers
+        d1: first  vector; entries are Python big integers
+        p2: second point;  entries are Python big integers
+        d2: second vector; entries are Python big integers
     """
     n  = cross3(d1, d2)
     n1 = cross3(d1, n)
@@ -71,7 +71,7 @@ while True:
     else:
         t += dt
 
-# FIND SOLUTION INITIAL POSITION
+# FIND SOLUTION'S INITIAL POSITION
 p  = P0[I] + s * D0[I]
 q  = P0[J] + t * D0[J]
 Pn = t * p - s * q      # solution's initial position P numerator

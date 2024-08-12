@@ -267,8 +267,11 @@ There should be a unique line containing the solution trajectory, provided the i
 straightforward to derive the solution trajectory from the unique line, so the hard part
 is to find the (unique) line.
 
-This problem (of finding a line that meets many other given lines in 3D space) seems like
-a least-squares problem. I did not manage to cast it as a least-squares problem. However,
+This problem (of finding a line that meets many other given lines in 3D space) seemed
+to me at first like a least-squares problem.
+I did not manage to cast it as a least-squares problem.
+
+However,
 if we consider it as a more general problem of optimization (find a line near as possible
 to many other lines), it is easy to imagine that there are only a few independent variables
 (I brought it down to 2 real variables), and there should be a well-behaved objective
@@ -278,6 +281,12 @@ I cooked up an objective function. I went to compute the gradient exactly, but t
 was nontrivial. Instead I did an axis-aligned search, constrained to the nonnegative
 quadrant, in the plus and minus directions along each axis at distances
 1, 10, ..., 1 billion or so, and this method of search quickly found the solution.
+
+My input file contains 300 rays. I suppose it takes only 3 or so lines to determine
+another line that meets each of them. Indeed, if we take the first 5 rays of the input
+(and ignore the last 295), my program produces the same answer as when we take all 300.
+Of course, the program runs faster on only 5 input rays, finishing in under 1 second,
+compared to 18 seconds for the full 300.
 
 ### Day 25
 

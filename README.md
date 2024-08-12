@@ -295,3 +295,10 @@ I searched the web for algorithms that find small cuts.
 (I searched for graph algorithms. I did not read discussions of Advent of Code problems.)
 I found Karger's algorithm, which is remarkably simple.
 Karger's algorithm worked fine for day 25.
+
+### Lib
+
+I developed a small library for AoC 2023 as I worked to publish my solutions.
+I have a couple functions to process AoC input files, and for graphs,
+a depth-first search function, a topological sorting function, and a simple
+(incomplete) rendition of Dijkstra's single-source shortest paths algorithm.

@@ -293,6 +293,7 @@ compared to 18 seconds for the full 300.
 My first efforts toward solving this problem ran too slowly.
 I searched the web for algorithms that find small cuts.
 (I searched for graph algorithms. I did not read discussions of Advent of Code problems.)
+
 I found Karger's algorithm, which is remarkably simple.
 Karger's algorithm worked fine for day 25.
 

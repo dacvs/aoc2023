@@ -24,13 +24,14 @@ I have edited my solutions to use **NumPy only**.
 
 For example:
 - `import numpy` is _allowed_, of course.
-- `import sys` is **forbidden**. No libraries but NumPy, not even imports of the standard library.
+- `import sys` is **forbidden**. No libraries but NumPy, not even imports of the
+standard library.
 - `import math` is **forbidden**. Same reason.
 - `import random` is **forbidden**. Same reason.
-- `import d03` is _allowed_. Module `d03` contains my code for day 3 that is shared by my solutions to parts 1 and 2 of day 3.
-- `import lib` is _allowed_. Module `lib` contains my code that is available to all my solutions.
-
-TODO verify claim NumPy only.
+- `import d03` is _allowed_. Module `d03` contains my code for day 3 that is shared
+by my solutions to parts 1 and 2 of day 3.
+- `import lib` is _allowed_. Module `lib` contains my code that is available to all
+my solutions.
 
 This was my first time participating in Advent of Code. Problems were
 easy at first. I solved many of them that first Saturday.
@@ -38,8 +39,6 @@ I solved many problems before I ever received a "wrong answer" message.
 I solved many problems before I ever defined a function.
 I defined only one class, and I could easily do without that definition, so
 I have edited my solutions to use **no classes**.
-
-TODO verify claim no classes.
 
 These rules are arbitrary but interesting in an event like Advent of Code.
 

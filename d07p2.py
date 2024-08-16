@@ -6,7 +6,10 @@ def mhtype(M, order, cards):  # memoized
     if j < 0:
         return d07.htype(cards)
     if not cards in M:
-        M[cards] = max(mhtype(M, order, cards[:j] + card + cards[j+1:]) for card in order[1:])
+        M[cards] = max(
+            mhtype(M, order, cards[:j] + card + cards[j+1:])
+            for card in order[1:]
+        )
     return M[cards]
 
 order = "J23456789TQKA"

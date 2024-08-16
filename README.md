@@ -68,18 +68,6 @@ I used Python 3.10, but any recent Python should work.
 
 ## Comments
 
-### Day 2
-
-We don't need regular expressions. Python's `str.split()` is fine.
-
-### Day 3
-
-NumPy arrays. Why not?
-
-### Day 4
-
-Keep it simple.
-
 ### Day 6
 
 In part 2, some of the numbers involved are large, possibly too large

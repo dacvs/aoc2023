@@ -59,7 +59,8 @@ def graph_start():
             if A[i, j] == 'L': N[(a, b)] = set([(a - 1, b), (a, b + 1)])
             if A[i, j] == '|': N[(a, b)] = set([(a + 1, b), (a - 1, b)])
             if A[i, j] == '-': N[(a, b)] = set([(a, b + 1), (a, b - 1)])
-            if A[i, j] == 'S': N[(a, b)] = set([(a + 1, b), (a - 1, b), (a, b + 1), (a, b - 1)])
+            if A[i, j] == 'S': N[(a, b)] = set([(a + 1, b), (a - 1, b),
+                                                (a, b + 1), (a, b - 1)])
     lib.symmetrize(N)
 
     # find starting node S and remove pendant edges incident to S

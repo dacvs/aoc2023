@@ -16,12 +16,12 @@ for rxp in outs:
         # We expect the value (Lo or Hi) at each module to be periodic.
         # As rxp is conj, we want to know when each predecessor rxpp of rxp is Hi.
 
-        fmpp = set(s for s in outs if rxp in outs[s])   # final module pred preds
+        rxpp = set(s for s in outs if rxp in outs[s])
         i = 0
         Q = []  # Q: queue of pulses; Q[i] is the next pulse to process, if i < len(Q)
         period = {}
         p = 0   # number of button presses
-        while period.keys() != fmpp:
+        while period.keys() != rxpp:
             p += 1
             Q.append(("button", 0, "broadcaster"))
             while i < len(Q):

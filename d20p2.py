@@ -33,6 +33,5 @@ for rxp in outs:
                         period[s] = p
                 i += 1
         a = np.lcm.reduce(list(period.values()))
-        if ans > a:
-            ans = a
+        ans = min(ans, a)
 print(f"ans", ans)

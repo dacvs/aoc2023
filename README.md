@@ -126,24 +126,25 @@ When a module sends a pulse, it sends that type of pulse to each of its
 destination modules.
 
 Flip-flop module (prefix "%") is on or off, initially off.
- When it receives Hi, it does nothing.
- When it receives Lo, it flips between on, off.
- If it was off, it turns on and sends Hi.
- If it was on, it turns off and sends Lo.
+When it receives Hi, it does nothing.
+When it receives Lo, it flips between on, off.
+- If it was off, it turns on and sends Hi.
+- If it was on, it turns off and sends Lo.
 
 Conjunction module (prefix "&") remembers the type of the most recent pulse
 received from each input module.
-Initially remembers Lo.
+Initially it remembers Lo.
 When a pulse is received, the module first updates its memory for that input.
 Then if it remembers all Hi, it sends Lo. Otherwise sends Hi. (Like Nand).
 
-Broadcast module (only one exists).
-When it receives a pulse, sends the same pulse to all its destinations.
+Broadcast module (only one exists),
+when it receives a pulse, sends the same pulse to all its destinations.
 
-Button module when pushed emits Lo to broadcast module.
-After pushing button, must wait till all pulses delivered before pushing again.
+Button module, when pushed, emits Lo to the broadcast module.
+After you push the button,
+you must wait till all pulses are delivered before you push again.
 
-Pulses processed in the order sent.
+Pulses are processed in the order sent.
 
 ### Day 21
 

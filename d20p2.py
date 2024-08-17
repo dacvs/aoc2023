@@ -32,7 +32,7 @@ for rxp in outs:
                     if not s in period:
                         period[s] = p
                 i += 1
-        a = np.lcm.reduce(list(period.values()))  # this makes sense when rxp is conj
+        a = np.lcm.reduce(list(period.values()))
         if ans > a:
             ans = a
 print(f"ans", ans)

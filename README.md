@@ -38,7 +38,7 @@ easy at first. I solved many of them that first Saturday.
 I solved many problems before I ever received a "wrong answer" message.
 I solved many problems before I ever defined a function.
 I defined only one class, and I could easily do without that definition, so
-I have edited my solutions to use **no classes**.
+I have edited my solutions to define **no classes**.
 
 These rules are arbitrary but interesting in an event like Advent of Code.
 

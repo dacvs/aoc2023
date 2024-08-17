@@ -33,8 +33,9 @@ by my solutions to parts 1 and 2 of day 3.
 - `import lib` is _allowed_. Module `lib` contains my code that is available to all
 my solutions.
 
-This was my first time participating in Advent of Code. Problems were
-easy at first. I solved many of them that first Saturday.
+This was my first time participating in Advent of Code.
+Problems were easy at first.
+I solved many problems on my first day.
 I solved many problems before I ever received a "wrong answer" message.
 I solved many problems before I ever defined a function.
 I defined only one class, and I could easily do without that definition, so

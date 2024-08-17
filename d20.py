@@ -7,10 +7,8 @@ def flip_conj_outs_mem():
     for line in lib.block("input/20.txt"):  # line is like "%cg -> mt, hb"
         s, T = lib.split(line, [" -> "])    # s: source; T: targets
         outs[s.lstrip("%&")] = T.split(", ")
-        if s[0] == '%':
-            flip[s[1:]] = 0     # 0: this flip-flop is off
-        if s[0] == '&':
-            conj[s[1:]] = []
+        if s[0] == '%': flip[s[1:]] = 0     # 0: this flip-flop is off
+        if s[0] == '&': conj[s[1:]] = []
     assert outs.keys() == set(["broadcaster"]) | flip.keys() | conj.keys()
     assert not flip.keys() & conj.keys()
 

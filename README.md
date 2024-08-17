@@ -36,10 +36,10 @@ my solutions.
 This was my first time participating in Advent of Code.
 Problems were easy at first.
 I solved many problems on my first day.
-I solved many problems before I ever received a "wrong answer" message.
+I solved many problems before I received a "wrong answer" message.
 I solved many problems before I ever defined a function.
 I defined only one class, and I could easily do without that definition, so
-I have edited my solutions to define **no classes**.
+I have edited my solutions so that I define **no classes**.
 
 These rules are arbitrary but interesting in an event like Advent of Code.
 
